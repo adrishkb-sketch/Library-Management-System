@@ -9,6 +9,7 @@ def view_student(students_list,books_list,std_index,book_index):
     print("Issued Books:")
     for x in students_list[std_index]["books_issued"]:
         for y in books_list:
+            print(books_list[y]["code"])
 
 
 
