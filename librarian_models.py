@@ -1,5 +1,5 @@
 import json
-
+#STUDENTS START
 #viewing a student details
 def view_student(students_list, books_list, std_index):
     print(f"Name: {students_list[std_index]['name']}")
@@ -65,9 +65,9 @@ def add_student(students_list):
                  "books_with_user": 0
                  }
     students_list.append(new_student)
-    with open("student_data.json", "w") as f:
+    with open("database/student_data.json", "w") as f:
         json.dump(students_list, f, indent=4)
-    with open("book_data.json", "r") as f:
+    with open("database/book_data.json", "r") as f:
         book_data = json.load(f)
     view_student(students_list,book_data,len(students_list)-1)
 
@@ -79,7 +79,7 @@ def remove_student(students_list):
         for i in range(len(students_list)):
             if students_list[i]["name"] == name:
                 remove_number=i
-                with open("book_data.json", "r") as f:
+                with open("database/book_data.json", "r") as f:
                     book_data = json.load(f)
                 view_student(students_list,book_data,i)
                 confirmation=input("Do you want to remove the book from the list? (Y/N): ")
@@ -93,7 +93,7 @@ def remove_student(students_list):
         for i in range(len(students_list)):
             if students_list[i]["roll"] == roll:
                 remove_number=i
-                with open("book_data.json", "r") as f:
+                with open("database/book_data.json", "r") as f:
                     book_data = json.load(f)
                 view_student(students_list,book_data,i)
                 confirmation = input("Do you want to remove the book from the list? (Y/N): ")
@@ -102,7 +102,7 @@ def remove_student(students_list):
                 else:
                     break
                 break
-    with open("student_data.json", "w") as f:
+    with open("database/student_data.json", "w") as f:
         json.dump(students_list, f, indent=4)
 
 #editing an existing student
@@ -111,7 +111,7 @@ def edit_student(students_list):
     for i in range(len(students_list)):
         if students_list[i]["roll"] == roll:
             student_number=i
-            with open("book_data.json", "r") as f:
+            with open("database/book_data.json", "r") as f:
                 book_data = json.load(f)
             view_student(students_list, book_data, i)
             edit=input("Edit Name(N), Edit Year(Y), Edit Password(P), Edit Department(D):  ")
@@ -131,5 +131,21 @@ def edit_student(students_list):
                 new_department=input("Enter New Department: ")
                 students_list[student_number]["department"]=new_department
                 break
-    with open("student_data.json", "w") as f:
+    with open("database/student_data.json", "w") as f:
             json.dump(students_list, f, indent=4)
+##!STUDENT END
+
+#PROFESSOR START
+##!PROFESSOR END
+
+#OFFICE STAFF START
+##!OFFICE STAFF END
+
+#BOOKS START
+#adding a new book
+
+
+##!BOOKS END
+
+#MAIN LIBRARIAN FUNCTIONS START
+##!MAIN LIBRARIAN FUNCTIONS END

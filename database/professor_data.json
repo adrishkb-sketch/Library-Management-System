@@ -1,5 +1,4 @@
-
-professors=[
+[
     {
      "professor_name":"","professor_id":"","password":"",
      "books_issued": [1002,2004,[3872,4563],4598],
