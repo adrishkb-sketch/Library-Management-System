@@ -67,6 +67,9 @@ def add_student(students_list):
     students_list.append(new_student)
     with open("student_data.json", "w") as f:
         json.dump(students_list, f, indent=4)
+    with open("book_data.json", "r") as f:
+        book_data = json.load(f)
+    view_student(students_list,book_data,len(students_list)-1)
 
 #removing a student
 def remove_student(students_list):
@@ -76,14 +79,28 @@ def remove_student(students_list):
         for i in range(len(students_list)):
             if students_list[i]["name"] == name:
                 remove_number=i
-                students_list.pop(remove_number)
+                with open("book_data.json", "r") as f:
+                    book_data = json.load(f)
+                view_student(students_list,book_data,i)
+                confirmation=input("Do you want to remove the book from the list? (Y/N): ")
+                if confirmation == "Y":
+                    students_list.pop(remove_number)
+                else:
+                    break
                 break
     elif find_by == "R":
         roll=input("Enter Student Roll Number: ")
         for i in range(len(students_list)):
             if students_list[i]["roll"] == roll:
                 remove_number=i
-                students_list.pop(remove_number)
+                with open("book_data.json", "r") as f:
+                    book_data = json.load(f)
+                view_student(students_list,book_data,i)
+                confirmation = input("Do you want to remove the book from the list? (Y/N): ")
+                if confirmation == "Y":
+                    students_list.pop(remove_number)
+                else:
+                    break
                 break
     with open("student_data.json", "w") as f:
         json.dump(students_list, f, indent=4)
@@ -94,6 +111,9 @@ def edit_student(students_list):
     for i in range(len(students_list)):
         if students_list[i]["roll"] == roll:
             student_number=i
+            with open("book_data.json", "r") as f:
+                book_data = json.load(f)
+            view_student(students_list, book_data, i)
             edit=input("Edit Name(N), Edit Year(Y), Edit Password(P), Edit Department(D):  ")
             if edit=="N":
                 new_name=input("Enter New Name: ")
