@@ -1,0 +1,9 @@
+[
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]}
+]
