@@ -1,57 +1,60 @@
 books = [
-    {"name": "ABCD", "author": "MNB", "code": 1032, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "ABUD", "author": "PKC", "code": 1033, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "AOCD", "author": "MKC", "code": 1034, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "ASCD", "author": "MNK", "code": 1035, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "ABND", "author": "ASN", "code": 1036, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "ABCP", "author": "ASM", "code": 1037, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name": "FBCD", "author": "MRT", "code": 1038, "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]}
+    {"name": "ABCD", "author": "MNB", "code": 1032, "department": "CSE", "year": "1st", "subject": "Math",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "ABUD", "author": "PKC", "code": 1033, "department": "ECE", "year": "2nd", "subject": "Physics",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "AOCD", "author": "MKC", "code": 1034, "department": "CSE", "year": "3rd", "subject": "DSA",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "ASCD", "author": "MNK", "code": 1035, "department": "ME", "year": "1st", "subject": "Mechanics",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "ABND", "author": "ASN", "code": 1036, "department": "CE", "year": "2nd", "subject": "Structure",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "ABCP", "author": "ASM", "code": 1037, "department": "CSE", "year": "4th", "subject": "AI",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]},
+
+    {"name": "FBCD", "author": "MRT", "code": 1038, "department": "ECE", "year": "3rd", "subject": "Signals",
+     "no_of_copies": 5, "book_numbers": [], "edition": [], "condition": ["Good", "Bad", "Okay", "Terrible"]}
 ]
-def search_by_name(book_name):
-    found = False
-    for book in books:
-        if book_name.lower() in book["name"].lower():
-            print("\nBook Found:")
-            print_book(book)
-            found = True
-    if not found:
-        print("No book found with that name.")
-def search_by_author(author_name):
-    found = False
-    for book in books:
-        if author_name.lower() in book["author"].lower():
-            print("\nBook Found:")
-            print_book(book)
-            found = True
-    if not found:
-        print("No book found by that author.")
+
 def print_book(book):
-    print(f"Name: {book['name']}")
-    print(f"Author: {book['author']}")
-    print(f"Code: {book['code']}")
-    print(f"Copies: {book['no_of_copies']}")
-    print("-" * 20)
-    
+    print("\n Book Found:")
+    print(f"Name       : {book['name']}")
+    print(f"Author     : {book['author']}")
+    print(f"Code       : {book['code']}")
+    print(f"Department : {book['department']}")
+    print(f"Year       : {book['year']}")
+    print(f"Subject    : {book['subject']}")
+    print(f"Copies     : {book['no_of_copies']}")
+    print("-" * 30)
+
+
+def search_books(field, value):
+    found = False
+
+    for book in books:
+        if field in book:
+            if str(value).lower() in str(book[field]).lower():
+                print_book(book)
+                found = True
+
+    if not found:
+        print("\n No matching book found.")
+
+
 if __name__ == "__main__":
     while True:
-        print("\n1. Search by Book Name")
-        print("2. Search by Author")
-        print("3. Exit")
+        print("\n Search Options: name, author, code, department, year, subject")
+        field = input("Enter what you want to search by (or 'exit'): ").lower()
 
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            name = input("Enter book name: ")
-            search_by_name(name)
-
-        elif choice == "2":
-            author = input("Enter author name: ")
-            search_by_author(author)
-
-        elif choice == "3":
-            print("Exiting...")
+        if field == "exit":
+            print("Exiting program...")
             break
 
-        else:
-            print("Invalid choice!")
+        value = input("Enter search value: ")
 
+        search_books(field, value)
