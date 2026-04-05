@@ -1,0 +1,9 @@
+[
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
+    {"name":"ABUD","author":"PKC","code":1033,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
+    {"name":"AOCD","author":"MKC","code":1034,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ASCD","author":"MNK","code":1035,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABND","author":"ASN","code":1036,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"ABCP","author":"ASM","code":1037,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
+    {"name":"FBCD","author":"MRT","code":1038,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]}
+]
