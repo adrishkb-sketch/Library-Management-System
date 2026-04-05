@@ -143,8 +143,61 @@ def edit_student(students_list):
 
 #BOOKS START
 #adding a new book
+def add_book(book_data):
+    name = input("Enter book name: ")
+    author = input("Enter author: ")
+    code = int(input("Enter book code: "))
+    no_of_copies = int(input("Enter number of copies: "))
+    new_book = {
+        "name": name,
+        "author": author,
+        "code": code,
+        "no_of_copies": no_of_copies,
+        "book_numbers": [],
+        "edition": [],
+        "condition": []
+    }
+    book_data.append(new_book)
+    with open("book_data.json", "w") as f:
+        json.dump(book_data, f, indent=4)
+    print("Book added successfully!")
 
+#Deleting an existing book
+def delete_book(book_data):
+    code = int(input("Enter book code to delete: "))
+    for i in range(len(book_data)):
+        if book_data[i]["code"] == code:
+            book_data.pop(i)
+            break
+    else:
+        print("Book not found!")
+        return
+    with open("book_data.json", "w") as f:
+        json.dump(book_data, f, indent=4)
+    print("Book deleted successfully!")
 
+#Editing an existing book
+def edit_book(book_data):
+    code = int(input("Enter book code to edit: "))
+    for book in book_data:
+        if book["code"] == code:
+            print("Leave blank to keep old value")
+            name = input(f"Enter new name ({book['name']}): ")
+            author = input(f"Enter new author ({book['author']}): ")
+            copies = input(f"Enter new number of copies ({book['no_of_copies']}): ")
+            if name:
+                book["name"] = name
+            if author:
+                book["author"] = author
+            if copies:
+                book["no_of_copies"] = int(copies)
+            break
+    else:
+        print("Book not found!")
+        return
+    with open("book_data.json", "w") as f:
+        json.dump(book_data, f, indent=4)
+    print("Book updated successfully!")
 ##!BOOKS END
 
 #MAIN LIBRARIAN FUNCTIONS START
