@@ -158,7 +158,7 @@ def add_book(book_data):
         "condition": []
     }
     book_data.append(new_book)
-    with open("book_data.json", "w") as f:
+    with open("database/book_data.json", "w") as f:
         json.dump(book_data, f, indent=4)
     print("Book added successfully!")
 
@@ -172,7 +172,7 @@ def delete_book(book_data):
     else:
         print("Book not found!")
         return
-    with open("book_data.json", "w") as f:
+    with open("database/book_data.json", "w") as f:
         json.dump(book_data, f, indent=4)
     print("Book deleted successfully!")
 
@@ -195,7 +195,7 @@ def edit_book(book_data):
     else:
         print("Book not found!")
         return
-    with open("book_data.json", "w") as f:
+    with open("database/book_data.json", "w") as f:
         json.dump(book_data, f, indent=4)
     print("Book updated successfully!")
 ##!BOOKS END
