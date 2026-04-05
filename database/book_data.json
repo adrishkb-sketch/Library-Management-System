@@ -1,9 +1,22 @@
 [
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition":["Good","Bad","Okay","Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]},
-    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],"condition": ["Good", "Bad", "Okay", "Terrible"]}
-]
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],
+      "condition":["Good","Bad","Okay","Terrible"],"subject": "","topics": "","difficulty_level": "",
+      "publication_year": 2025,"keywords": [],"book_type": "","ratings": [],"average_rating": 0,
+      "total_reads": 0},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],
+      "condition":["Good","Bad","Okay","Terrible"],"subject": "","topics": "","difficulty_level": "",
+      "publication_year": 2025,"keywords": [],"book_type": "","ratings": [],"average_rating": 0,
+      "total_reads": 0},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],
+      "condition":["Good","Bad","Okay","Terrible"],"subject": "","topics": "","difficulty_level": "",
+      "publication_year": 2025,"keywords": [],"book_type": "","ratings": [],"average_rating": 0,
+      "total_reads": 0},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],
+      "condition":["Good","Bad","Okay","Terrible"],"subject": "","topics": "","difficulty_level": "",
+      "publication_year": 2025,"keywords": [],"book_type": "","ratings": [],"average_rating": 0,
+      "total_reads": 0},
+    {"name":"ABCD","author":"MNB","code":1032,"no_of_copies":5,"book_numbers":[],"edition":[],
+      "condition":["Good","Bad","Okay","Terrible"],"subject": "","topics": "","difficulty_level": "",
+      "publication_year": 2025,"keywords": [],"book_type": "","ratings": [],"average_rating": 0,
+      "total_reads": 0}
+  ]
