@@ -155,12 +155,24 @@ def add_book(book_data):
         "no_of_copies": no_of_copies,
         "book_numbers": [],
         "edition": [],
-        "condition": []
+        "condition": [],
+        # Librarian-controlled fields
+        "subject": input("Enter subject: "),
+        "topics": input("Enter topics: "),
+        "difficulty_level": input("Enter difficulty level: "),
+        "publication_year": int(input("Enter publication year: ")),
+        "book_type": input("Enter book type: "),
+        # ML-controlled fields (LOCKED)
+        "keywords": [],
+        "ratings": [],
+        "average_rating": 0,
+        "total_reads": 0
     }
     book_data.append(new_book)
     with open("database/book_data.json", "w") as f:
         json.dump(book_data, f, indent=4)
     print("Book added successfully!")
+
 
 #Deleting an existing book
 def delete_book(book_data):
@@ -185,12 +197,27 @@ def edit_book(book_data):
             name = input(f"Enter new name ({book['name']}): ")
             author = input(f"Enter new author ({book['author']}): ")
             copies = input(f"Enter new number of copies ({book['no_of_copies']}): ")
+            subject = input(f"Enter subject ({book['subject']}): ")
+            topics = input(f"Enter topics ({book['topics']}): ")
+            difficulty = input(f"Enter difficulty level ({book['difficulty_level']}): ")
+            pub_year = input(f"Enter publication year ({book['publication_year']}): ")
+            book_type = input(f"Enter book type ({book['book_type']}): ")
             if name:
                 book["name"] = name
             if author:
                 book["author"] = author
             if copies:
                 book["no_of_copies"] = int(copies)
+            if subject:
+                book["subject"] = subject
+            if topics:
+                book["topics"] = topics
+            if difficulty:
+                book["difficulty_level"] = difficulty
+            if pub_year:
+                book["publication_year"] = int(pub_year)
+            if book_type:
+                book["book_type"] = book_type
             break
     else:
         print("Book not found!")
