@@ -136,6 +136,70 @@ def edit_student(students_list):
 ##!STUDENT END
 
 #PROFESSOR START
+
+#Adding a new professor to the database
+def professor_add(professor_data):
+    name = input("Enter Professor Name: ")
+    prof_id = input("Enter Professor ID: ")
+    password = input("Enter Password: ")
+    confirm = input("Confirm add this professor? (Y/N): ")
+    if confirm.lower() != "y":
+        print("Operation cancelled.")
+        return
+    new_professor = {
+        "professor_name": name,
+        "professor_id": prof_id,
+        "password": password,
+        "books_issued": [],
+        "issue_date": [],
+        "expected_return_date": [],
+        "return_status": [],
+        "return_date": [],
+        "requested_books": [],
+        "books_with_user": 0
+    }
+    professor_data.append(new_professor)
+    with open("database/professor_data.json", "w") as f:
+        json.dump(professor_data, f, indent=4)
+    print("Professor added and saved successfully.")
+
+#Editing an existing professor details
+def professor_edit(professor_data):
+    prof_id = input("Enter Professor ID to edit: ")
+    for professor in professor_data:
+        if professor["professor_id"] == prof_id:
+            print("Leave blank if you don’t want to change anything.")
+            new_name = input("Enter new name: ")
+            new_password = input("Enter new password: ")
+            confirm = input("Confirm update? (Y/N): ")
+            if confirm.lower() != "y":
+                print("Operation cancelled.")
+                return
+            if new_name:
+                professor["professor_name"] = new_name
+            if new_password:
+                professor["password"] = new_password
+            with open("database/professor_data.json", "w") as f:
+                json.dump(professor_data, f, indent=4)
+            print("Professor details updated and saved.")
+            return
+    print("Professor not found.")
+
+#deleting a professor details
+def professor_delete(professor_data):
+    prof_id = input("Enter Professor ID to delete: ")
+    for i in range(len(professor_data)):
+        if professor_data[i]["professor_id"] == prof_id:
+            confirm = input("Are you sure you want to delete this professor? (Y/N): ")
+            if confirm.lower() != "y":
+                print("Operation cancelled.")
+                return
+            professor_data.pop(i)
+            with open("database/professor_data.json", "w") as f:
+                json.dump(professor_data, f, indent=4)
+            print("Professor deleted and changes saved.")
+            return
+    print("Professor not found.")
 ##!PROFESSOR END
 
 #OFFICE STAFF START
