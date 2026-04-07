@@ -17,9 +17,3 @@ def library_search(book_data):
                 print("-" * 25)
         else:
             print(" No matching book found.")
-
-#running the function
-import json
-with open("database/book_data.json", "r") as f:
-    book_data = json.load(f)
-library_search(book_data)
